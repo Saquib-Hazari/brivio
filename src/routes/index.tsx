@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import designMockup from "../../../UI/Mock1.png";
-import deployMockup from "../../../UI/Mock2.png";
+import designMockup from "../assets/mock1.png";
+import deployMockup from "../assets/mock2.png";
 import { AboutBoard } from "../components/AboutBoard";
 import { ContactForm } from "../components/ContactForm";
 import { FaqSection } from "../components/FaqSection";

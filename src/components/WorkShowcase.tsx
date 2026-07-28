@@ -1,4 +1,4 @@
-import molinoPastelloLogo from "../../../UI/logos/Molino new logo.png";
+import molinoPastelloLogo from "../assets/molino-pastello-logo.png";
 
 const feedback = [
 	"Clear strategy, fast execution, and a team that made a complex project feel manageable.",

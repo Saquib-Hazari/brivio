@@ -46,8 +46,8 @@ export function ContactForm() {
 						clearest next move across SEO, AEO, GEO, social distribution, and
 						conversion.
 					</p>
-					<a className="contact-email" href="mailto:hello@brivio.io">
-						<Mail aria-hidden="true" /> hello@brivio.io
+					<a className="contact-email" href="mailto:hello@brivio.tech">
+						<Mail aria-hidden="true" /> hello@brivio.tech
 					</a>
 				</div>
 				<form className="contact-form" onSubmit={submit} noValidate>
@@ -74,7 +74,7 @@ export function ContactForm() {
 							{status === "error" ? (
 								<p className="form-error" role="alert">
 									We could not send your inquiry. Please try again or email
-									hello@brivio.io directly.
+									hello@brivio.tech directly.
 								</p>
 							) : null}
 							<label>

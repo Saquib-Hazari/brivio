@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://brivio.io/sitemap.xml
+Sitemap: https://brivio.tech/sitemap.xml

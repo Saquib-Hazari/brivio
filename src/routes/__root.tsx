@@ -11,7 +11,7 @@ import Header from "../components/Header";
 
 import appCss from "../styles.css?url";
 
-const siteUrl = "https://brivio.io";
+const siteUrl = "https://brivio.tech";
 const siteDescription =
 	"Brivio is a performance-first digital agency connecting technical SEO, AEO, GEO, conversion design, fast development, and social distribution.";
 
@@ -23,7 +23,7 @@ const structuredData = {
 			"@id": `${siteUrl}/#organization`,
 			name: "Brivio",
 			url: siteUrl,
-			email: "hello@brivio.io",
+			email: "hello@brivio.tech",
 			description: siteDescription,
 		},
 		{

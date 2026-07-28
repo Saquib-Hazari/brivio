@@ -1,207 +1,126 @@
-Welcome to your new TanStack Start app!
+<div align="center">
 
-# Getting Started
+# BRIVIO
 
-To run this application:
+### Build search visibility that turns into qualified demand.
+
+**Performance-first digital agency · SEO · AEO · GEO · Conversion · Web experiences**
+
+[Live website](https://brivio.tech) · [Start a conversation](mailto:hello@brivio.tech)
+
+</div>
+
+---
+
+> **[Add hero / website screenshot here]**
+>
+> `![BRIVIO website preview](./docs/images/brivio-home.png)`
+
+## Why BRIVIO exists
+
+Digital growth is often fragmented: a beautiful site that does not convert, search traffic that does not become demand, or content that is invisible to the systems shaping how people discover brands.
+
+BRIVIO was created to bring those disciplines together. We build a connected growth system where strategy, technical SEO, answer-engine optimization, generative search visibility, design, development, and distribution reinforce one another. The aim is not activity for its own sake. It is durable, measurable demand.
+
+## Our point of view
+
+We believe performance is felt before it is measured. A fast, clear, trustworthy experience creates confidence before a metric is ever recorded. Every decision should make it easier for the right audience to find a brand, understand its value, and take the next step.
+
+## Brand values
+
+| Value | What it means in practice |
+| --- | --- |
+| **Performance first** | We prioritize work that moves visibility, conversion, and commercial outcomes. |
+| **Data-driven clarity** | We use evidence to decide what matters, then turn it into focused action. |
+| **Radical trust** | We communicate clearly, set honest expectations, and make the work visible. |
+| **Craft with purpose** | Every pixel, interaction, and line of code earns its place. |
+| **One integrated system** | Strategy, design, engineering, and distribution work together—not as separate handoffs. |
+
+## What we help ambitious teams build
+
+- **Search intelligence** — technical SEO, search-demand architecture, AEO, and GEO.
+- **Revenue experiences** — conversion-focused UX/UI, persuasive messaging, and fast websites.
+- **Growth infrastructure** — scalable development, resilient deployments, and measurable systems.
+- **Distribution loops** — social content and authority-building that compound visibility.
+
+## The BRIVIO process
+
+1. **Strategy** — identify the search demand, customer questions, and conversion opportunities.
+2. **Design** — create an experience that makes the value clear and the next step obvious.
+3. **Code** — build a fast, accessible, resilient digital product.
+4. **Deploy** — launch with dependable infrastructure and a clean measurement foundation.
+5. **SEO** — compound authority across search, AI answers, and generative discovery.
+
+## Website preview
+
+<!-- Add product screenshots below. Suggested size: 1600 × 1000 px. -->
+
+| Home | Services | Case studies |
+| --- | --- | --- |
+| `[Add image]` | `[Add image]` | `[Add image]` |
+
+<!--
+Example:
+![Home page](./docs/images/home.png)
+-->
+
+## Built with
+
+- [TanStack Start](https://tanstack.com/start)
+- React and TypeScript
+- TanStack Router
+- GSAP
+- Resend for server-side contact-form delivery
+- Vercel-ready deployment configuration
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-# Building For Production
+Create a `.env.local` file for contact-form delivery:
 
-To build this application for production:
+```env
+RESEND_API_KEY=re_your_resend_key
+RESEND_EMAIL_FROM=onboarding@resend.dev
+CONTACT_EMAIL_TO=your-resend-account-email@example.com
+```
+
+`onboarding@resend.dev` is for Resend testing and can only send to the account email. After verifying a domain in Resend, use a branded sender such as `BRIVIO <hello@yourdomain.com>`.
+
+## Quality checks
 
 ```bash
+npm run check
 npm run build
 ```
 
-## Styling
+## Deploy on Vercel
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
+1. Push this repository to GitHub.
+2. Import it into [Vercel](https://vercel.com/new).
+3. Add the three environment variables above under **Project Settings → Environment Variables**.
+4. Deploy, then redeploy whenever environment variables change.
 
-### Removing Tailwind CSS
+Keep `RESEND_API_KEY` private. Never add the `VITE_` prefix or commit it to the repository.
 
-If you prefer not to use Tailwind CSS:
+## Connect with BRIVIO
 
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
+<!-- Replace the placeholder URLs with your real contact links. -->
 
-## Linting & Formatting
+- Website: [brivio.tech](https://brivio.tech)
+- Email: [hello@brivio.tech](mailto:hello@brivio.tech)
+- LinkedIn: [Add your LinkedIn URL](https://linkedin.com/in/your-profile)
+- Instagram: [Add your Instagram URL](https://instagram.com/your-profile)
+- X / Twitter: [Add your X URL](https://x.com/your-profile)
+- Calendly: [Add your booking link](https://calendly.com/your-profile)
 
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
+---
 
+<div align="center">
 
-```bash
-npm run lint
-npm run format
-npm run check
-```
+**BRIVIO — visibility, experience, and demand working as one system.**
 
-
-## Shadcn
-
-Add components using the latest version of [Shadcn](https://ui.shadcn.com/).
-
-```bash
-pnpm dlx shadcn@latest add button
-```
-
-
-
-## Routing
-
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
-
-### Adding A Route
-
-To add a new route to your application just add a new file in the `./src/routes` directory.
-
-TanStack will automatically generate the content of the route file for you.
-
-Now that you have two routes you can use a `Link` component to navigate between them.
-
-### Adding Links
-
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
-
-```tsx
-import { Link } from "@tanstack/react-router";
-```
-
-Then anywhere in your JSX you can use it like so:
-
-```tsx
-<Link to="/about">About</Link>
-```
-
-This will create a link that will navigate to the `/about` route.
-
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
-    ],
-  }),
-  shellComponent: ({ children }) => (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  ),
-})
-```
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-## Server Functions
-
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
-
-```tsx
-import { createServerFn } from '@tanstack/react-start'
-
-const getServerTime = createServerFn({
-  method: 'GET',
-}).handler(async () => {
-  return new Date().toISOString()
-})
-
-// Use in a component
-function MyComponent() {
-  const [time, setTime] = useState('')
-  
-  useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
-}
-```
-
-## API Routes
-
-You can create API routes by using the `server` property in your route definitions:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
-
-export const Route = createFileRoute('/api/hello')({
-  server: {
-    handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
-    },
-  },
-})
-```
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/people')({
-  loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
-  },
-  component: PeopleComponent,
-})
-
-function PeopleComponent() {
-  const data = Route.useLoaderData()
-  return (
-    <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
-    </ul>
-  )
-}
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
-
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+</div>

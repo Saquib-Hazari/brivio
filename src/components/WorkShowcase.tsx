@@ -1,3 +1,5 @@
+import molinoPastelloLogo from "../../../UI/logos/Molino new logo.png";
+
 const feedback = [
 	"Clear strategy, fast execution, and a team that made a complex project feel manageable.",
 	"The work gave our team a sharper story and a much stronger path from interest to action.",
@@ -5,10 +7,15 @@ const feedback = [
 ] as const;
 
 const middleTiles = [
-	{ id: "middle-a", label: "Bloombaby" },
-	{ id: "middle-b", label: "Virtual Portfolio" },
-	{ id: "middle-c", label: "" },
-	{ id: "middle-d", label: "" },
+	{ id: "middle-a", label: "Bloombaby", className: "client-tile-pyramid-1" },
+	{
+		id: "middle-b",
+		label: "Virtual Portfolio",
+		href: "https://tanstack-start-app.saquibhazari1000.workers.dev/",
+		className: "client-tile-pyramid-2",
+	},
+	{ id: "middle-c", label: "", className: "client-tile-pyramid-3" },
+	{ id: "middle-d", label: "", className: "client-tile-pyramid-4" },
 ] as const;
 const bottomTiles = [
 	"bottom-a",
@@ -39,20 +46,53 @@ export function WorkShowcase() {
 						Trusted by ambitious teams building brands, products, and digital
 						experiences that need to move faster.
 					</p>
-					<div className="client-tile client-tile-top">Maleno Pastalo</div>
-					<div className="client-tile client-tile-top">Jupytr Studio</div>
-					{middleTiles.map((tile) => (
+					<a
+						className="client-tile client-tile-top client-tile-pyramid-top-1"
+						href="https://molino-pastello.saquibhazari1000.workers.dev/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Open Maleno Pastalo in a new tab"
+					>
+						<img
+							className="client-tile-logo"
+							src={molinoPastelloLogo}
+							alt="Molino Pastello"
+						/>
+					</a>
+					<a
+						className="client-tile client-tile-top client-tile-pyramid-top-2"
+						href="https://jupitr.studio/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Open Jupitr Studio in a new tab"
+					>
+						Jupitr Studio
+					</a>
+					{middleTiles.map((tile) =>
+						tile.href ? (
+							<a
+								className={`client-tile client-tile-middle ${tile.className}`}
+								href={tile.href}
+								key={tile.id}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Open Virtual Portfolio in a new tab"
+							>
+								{tile.label}
+							</a>
+						) : (
+							<div
+								className={`client-tile client-tile-middle ${tile.className}`}
+								key={tile.id}
+								aria-hidden={tile.label ? undefined : true}
+							>
+								{tile.label}
+							</div>
+						),
+					)}
+					{bottomTiles.map((tile, index) => (
 						<div
-							className="client-tile client-tile-middle"
-							key={tile.id}
-							aria-hidden={tile.label ? undefined : true}
-						>
-							{tile.label}
-						</div>
-					))}
-					{bottomTiles.map((tile) => (
-						<div
-							className="client-tile client-tile-bottom"
+							className={`client-tile client-tile-bottom client-tile-pyramid-bottom-${index + 1}`}
 							key={tile}
 							aria-hidden="true"
 						/>

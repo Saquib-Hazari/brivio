@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import designMockup from "../../../UI/Mock1.png";
+import deployMockup from "../../../UI/Mock2.png";
 import { AboutBoard } from "../components/AboutBoard";
 import { ContactForm } from "../components/ContactForm";
 import { FaqSection } from "../components/FaqSection";
@@ -81,9 +83,13 @@ const processQuotes = [
 ] as const;
 
 const capabilityArt = {
-	Design: "/media/capabilities/design-editorial.webp",
-	Code: "/media/capabilities/code-editorial.webp",
-	Deploy: "/media/capabilities/deploy-editorial.webp",
+	Design: designMockup,
+	Deploy: deployMockup,
+} as const;
+
+const codeShowcaseVideo = {
+	poster: "/media/code-showcase-poster.jpg",
+	src: "/media/code-showcase.mp4",
 } as const;
 
 export const Route = createFileRoute("/")({ component: HomePage });
@@ -99,7 +105,7 @@ function HomePage() {
 						Performance-first digital agency
 					</p>
 					<h1 data-heading-reveal>
-						Build Search Visibility That Turns Into Qualified Demand.
+						Designing SEO-Optimized Websites That Help You Grow Revenue Faster.
 					</h1>
 					<p data-reveal className="hero-copy">
 						We connect technical SEO, answer-engine optimization, generative
@@ -176,7 +182,12 @@ function HomePage() {
 									</div>
 								</div>
 								<div data-reveal className="process-media">
-									{item.title in capabilityArt ? (
+									{item.title === "Code" ? (
+										<CapabilityVideo
+											title={item.title}
+											{...codeShowcaseVideo}
+										/>
+									) : item.title in capabilityArt ? (
 										<CapabilityArtwork
 											title={item.title}
 											src={
@@ -327,7 +338,7 @@ function CapabilityArtwork({ title, src }: { title: string; src: string }) {
 	}
 
 	return (
-		<figure className="capability-art">
+		<figure className={`capability-art capability-art-${title.toLowerCase()}`}>
 			<img
 				alt={`${title} capability illustration`}
 				src={src}
@@ -337,6 +348,70 @@ function CapabilityArtwork({ title, src }: { title: string; src: string }) {
 				height="960"
 				onError={() => setFailed(true)}
 			/>
+		</figure>
+	);
+}
+
+function CapabilityVideo({
+	title,
+	src,
+	poster,
+}: {
+	title: string;
+	src: string;
+	poster: string;
+}) {
+	const videoRef = useRef<HTMLVideoElement>(null);
+	const [failed, setFailed] = useState(false);
+	const [shouldLoad, setShouldLoad] = useState(false);
+	const [shouldPlay, setShouldPlay] = useState(false);
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
+		const motionPreference = window.matchMedia(
+			"(prefers-reduced-motion: reduce)",
+		);
+		const updatePlayback = () => setShouldPlay(!motionPreference.matches);
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (!entry?.isIntersecting) return;
+				setShouldLoad(true);
+				observer.disconnect();
+			},
+			{ rootMargin: "200px" },
+		);
+
+		updatePlayback();
+		observer.observe(video);
+		motionPreference.addEventListener("change", updatePlayback);
+
+		return () => {
+			observer.disconnect();
+			motionPreference.removeEventListener("change", updatePlayback);
+		};
+	}, []);
+
+	if (failed) {
+		return <CapabilityArtwork title={title} src={poster} />;
+	}
+
+	return (
+		<figure className="capability-art capability-art-code capability-video">
+			<video
+				ref={videoRef}
+				autoPlay={shouldPlay && shouldLoad}
+				loop
+				muted
+				playsInline
+				poster={poster}
+				preload="metadata"
+				aria-label={`${title} capability video`}
+				onError={() => setFailed(true)}
+			>
+				{shouldLoad ? <source src={src} type="video/mp4" /> : null}
+			</video>
 		</figure>
 	);
 }
@@ -378,7 +453,10 @@ function PriceCard({
 						</li>
 					))}
 				</ul>
-				<a className="button button-yellow price-connect" href="#contact-form">
+				<a
+					className={`button ${featured ? "button-yellow" : "button-white"} price-connect`}
+					href="#contact-form"
+				>
 					Connect <ChevronRight aria-hidden="true" />
 				</a>
 			</div>

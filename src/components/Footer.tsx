@@ -100,8 +100,8 @@ export default function Footer() {
 						<MapPin aria-hidden="true" /> Remote-first studio serving ambitious
 						teams worldwide
 					</p>
-					<a className="footer-email" href="mailto:hello@brivio.io">
-						<Mail aria-hidden="true" /> hello@brivio.io
+					<a className="footer-email" href="mailto:hello@brivio.tech">
+						<Mail aria-hidden="true" /> hello@brivio.tech
 					</a>
 				</section>
 			</div>

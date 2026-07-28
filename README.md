@@ -12,9 +12,9 @@
 
 ---
 
-> **[Add hero / website screenshot here]**
->
-> `![BRIVIO website preview](./docs/images/brivio-home.png)`
+<p align="center">
+  <img src="./docs/images/brivio-home.png" alt="BRIVIO homepage with the SEO-optimized website headline" width="100%" />
+</p>
 
 ## Why BRIVIO exists
 
@@ -28,12 +28,12 @@ We believe performance is felt before it is measured. A fast, clear, trustworthy
 
 ## Brand values
 
-| Value | What it means in practice |
-| --- | --- |
-| **Performance first** | We prioritize work that moves visibility, conversion, and commercial outcomes. |
-| **Data-driven clarity** | We use evidence to decide what matters, then turn it into focused action. |
-| **Radical trust** | We communicate clearly, set honest expectations, and make the work visible. |
-| **Craft with purpose** | Every pixel, interaction, and line of code earns its place. |
+| Value                     | What it means in practice                                                               |
+| ------------------------- | --------------------------------------------------------------------------------------- |
+| **Performance first**     | We prioritize work that moves visibility, conversion, and commercial outcomes.          |
+| **Data-driven clarity**   | We use evidence to decide what matters, then turn it into focused action.               |
+| **Radical trust**         | We communicate clearly, set honest expectations, and make the work visible.             |
+| **Craft with purpose**    | Every pixel, interaction, and line of code earns its place.                             |
 | **One integrated system** | Strategy, design, engineering, and distribution work together—not as separate handoffs. |
 
 ## What we help ambitious teams build
@@ -53,16 +53,12 @@ We believe performance is felt before it is measured. A fast, clear, trustworthy
 
 ## Website preview
 
-<!-- Add product screenshots below. Suggested size: 1600 × 1000 px. -->
-
-| Home | Services | Case studies |
-| --- | --- | --- |
-| `[Add image]` | `[Add image]` | `[Add image]` |
-
-<!--
-Example:
-![Home page](./docs/images/home.png)
--->
+<p align="center">
+  <img src="./docs/images/brivio-home.png" alt="BRIVIO selected clients section" width="100%" />
+</p>
+<p align="center">
+  <img src="./docs/images/brivio-selected-clients.png" alt="BRIVIO selected clients section" width="100%" />
+</p>
 
 ## Built with
 

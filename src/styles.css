@@ -1256,7 +1256,9 @@ h1,h2 { letter-spacing:-4px; }
 .footer-grid section > a { display:flex; min-height:40px; align-items:center; margin-bottom:0; }
 .footer-bottom a { display:flex; min-height:44px; align-items:center; }
 
-@media (max-width:900px) {
+/* The stacked ScrollTrigger scene only runs on wide, fine-pointer devices.
+   Every other viewport uses a complete, native-scroll sequence. */
+@media (max-width:1099px), (pointer:coarse), (prefers-reduced-motion:reduce) {
   .process-list,.process-stack { height:auto!important; overflow:visible!important; }
   [data-process-panel] {
     position:relative!important;
